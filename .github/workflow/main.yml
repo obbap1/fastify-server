@@ -1,0 +1,17 @@
+name: Webhook action 
+on: [push]
+jobs:
+
+  build:
+    name: Build
+    runs-on: ubuntu-latest
+    steps:
+    # - uses: actions/checkout@master
+    - name: send auth token
+      uses: obbap1/webhook-action@master
+      env:
+        AUTH_TOKEN: ''
+      with:
+        routeToTest: ${{JSON.stringify([{route:"/", method:"GET"}])}}
+        baseURL:  http://92ad59d2.ngrok.io
+        hook: /web-hook  
