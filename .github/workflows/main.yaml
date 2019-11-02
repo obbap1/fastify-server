@@ -6,6 +6,7 @@ jobs:
     steps:
     - name: send auth token
       uses: obbap1/webhook-action@master 
+      uses: actions/checkout@master
       env:
         AUTH_TOKEN: ''
       with:
