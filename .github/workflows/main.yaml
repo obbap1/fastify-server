@@ -9,6 +9,6 @@ jobs:
       env:
         AUTH_TOKEN: ''
       with:
-        routeToTest: ${{JSON.stringify([{route:"/", method:"GET"}])}}
+        routeToTest: ${{ toJson([{route:"/", method:"GET"}])}}
         baseURL: http://cdf4d406.ngrok.io
         hook: /web-hook  
